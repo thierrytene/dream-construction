@@ -1,18 +1,19 @@
 import React from "react";
-import Header from "../components/Header/Header";
-import BannerPage from "../components/Blog/BannerPage";
-import Footer from "../components/Footer";
+import BannerHome from "../components/Banner/BannerHome";
 import TitleSection from "../components/TitleSection";
 import ServiceItem from "../components/ServiceItem";
-import TeamItem from "../components/TeamItem";
-import BlogItem from "../components/Blog/BlogItem";
 import CounterItem from "../components/CounterItem";
+import LastProjetItem from "../components/LastProjetItem";
+import TeamItem from "../components/TeamItem";
+import Reservation from "../components/Reservation";
 import TestimonialItem from "../components/TestimonialItem";
-import Signature from "../assets/images/signeture.png";
-import AboutCEO from "../assets/images/about.jpg";
+import BlogItem from "../components/Blog/BlogItem";
+import Footer from "../components/Footer";
+import Header from "../components/Header/Header";
+import BgCounter from "../assets/images/bg-counter.jpg";
 import { v4 as uuidv4 } from "uuid";
 
-function About() {
+function Home() {
   const services = [
     {
       title: "Construction de bâtiment",
@@ -104,55 +105,66 @@ function About() {
       afterNumber: "",
     },
   ];
+  const travaux = [
+    {
+      categories: "Residential Factory",
+      style: { position: "absolute", left: "0px", top: "0px" },
+      image: "",
+      title: "Commercial",
+    },
+    {
+      categories: "Commercial",
+      style: { position: "absolute", left: "437px", top: "0px" },
+      image: "",
+      title: "Commercial",
+    },
+    {
+      categories: "Factory",
+      style: { position: "absolute", left: "874px", top: "0px" },
+      image: "",
+      title: "Commercial",
+    },
+    {
+      categories: "Roof Replacement",
+      style: { position: "absolute", left: "0px", top: "323px" },
+      image: "",
+      title: "Commercial",
+    },
+    {
+      categories: "Roof Replacement",
+      style: { position: "absolute", left: "437px", top: "323px" },
+      image: "",
+      title: "Commercial",
+    },
+    {
+      categories: "Residential Factory",
+      style: { position: "absolute", left: "874px", top: "323px" },
+      image: "",
+      title: "Commercial",
+    },
+    {
+      categories: "Residential Factory",
+      style: { position: "absolute", left: "0px", top: "646px" },
+      image: "",
+      title: "Commercial",
+    },
+    {
+      categories: "Residential Factory",
+      style: { position: "absolute", left: "437px", top: "646px" },
+      image: "",
+      title: "Commercial",
+    },
+    {
+      categories: "Residential Factory",
+      style: { position: "absolute", left: "874px", top: "646px" },
+      image: "",
+      title: "Commercial",
+    },
+  ];
   return (
     <>
       <Header />
-      <BannerPage title="A propos" />
-      <section className="wpo-about-section section-padding">
-        <div className="container">
-          <div className="wpo-about-section-wrapper">
-            <div className="row align-items-center">
-              <div className="col-lg-5 col-md-12 col-12">
-                <div className="wpo-about-img">
-                  <img src={AboutCEO} alt="" />
-                </div>
-              </div>
-              <div className="col-lg-7 col-md-12 col-12">
-                <div className="wpo-about-content">
-                  <div className="wpo-section-title-s2">
-                    <h2>
-                      Plus de 5 ans d'expérience dans le service de construction
-                    </h2>
-                  </div>
-                  <div className="wpo-about-content-inner">
-                    <p>
-                      Il existe de nombreuses variantes de passages de Lorem
-                      Ipsum disponibles, mais la majorité ont subi une
-                      altération sous une forme ou une autre, par de l'humour
-                      injecté, ou des mots aléatoires qui ne semblent même pas
-                      légèrement crédibles et en passant par les citations du
-                      mot dans la littérature classique, a découvert le source
-                      incontestable. Le Lorem Ipsum vient des sections.
-                    </p>
-                    <p>
-                      Contrairement à la croyance populaire, le Lorem Ipsum
-                      n'est pas simplement un texte aléatoire. Il a ses racines
-                      dans un morceau de littérature latine classique de 45 av.
-                    </p>
-                    <div className="signeture">
-                      <h4>Olivier ONANA</h4>
-                      <p>Vertex Chambers, PDG</p>
-                      <span>
-                        <img src={Signature} alt="" />
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <BannerHome />
       {/*section liste des services */}
       <section className="wpo-service-section section-padding">
         <div className="container">
@@ -175,20 +187,91 @@ function About() {
           </div>
         </div>
       </section>
-      <section className="wpo-fun-fact-section section-padding">
+      {/*section counters */}
+      <section
+        className="wpo-fun-fact-section-s2 section-padding"
+        style={{ background: `url(${BgCounter}) no-repeat center center` }}
+      >
         <div className="container">
           <div className="row align-items-center">
-            <div className="col-lg-5">
-              <div className="wpo-funfacts-text">
-                <h3>
-                  Nous fournissons toujours différents des autres services.
-                </h3>
+            <div className="col col-lg-12">
+              <div className="wpo-fun-fact-grids clearfix">
+                {counters.map((counter) => (
+                  <CounterItem key={uuidv4()} counter={counter} />
+                ))}
               </div>
             </div>
-            <div className="col col-lg-6 offset-lg-1">
-              <div className="wpo-fun-fact-grids clearfix">
-                {counters.map(counter => (
-                  <CounterItem key={uuidv4()} counter={counter} />
+          </div>
+        </div>
+      </section>
+      {/*Section liste projets */}
+      <section className="wpo-projects section-padding">
+        <div className="container">
+          <div className="row align-items-center justify-content-center">
+            <div className="col-lg-6">
+              <TitleSection
+                title="Nos Travaux"
+                smallText="Lorem Ipsum is simply dummy text of the printing and typesetting
+        industry. has been the industry's standard dummy text ever since the
+        1500s."
+              />
+            </div>
+          </div>
+          <div className="row">
+            <div className="col col-xs-12 sortable-gallery">
+              <div className="gallery-filters projects-menu">
+                <ul>
+                  <li>
+                    <a data-filter="*" href="#" className="current">
+                      <font style={{ verticalAlign: "inherit" }}>
+                        <font style={{ verticalAlign: "inherit" }}>
+                          Tous les projets
+                        </font>
+                      </font>
+                    </a>
+                  </li>
+                  <li>
+                    <a data-filter=".Residential" href="#">
+                      <font style={{ verticalAlign: "inherit" }}>
+                        <font style={{ verticalAlign: "inherit" }}>
+                          Résidentiel
+                        </font>
+                      </font>
+                    </a>
+                  </li>
+                  <li>
+                    <a data-filter=".Commercial" href="#">
+                      <font style={{ verticalAlign: "inherit" }}>
+                        <font style={{ verticalAlign: "inherit" }}>
+                          Commercial
+                        </font>
+                      </font>
+                    </a>
+                  </li>
+                  <li>
+                    <a data-filter=".Factory" href="#">
+                      <font style={{ verticalAlign: "inherit" }}>
+                        <font style={{ verticalAlign: "inherit" }}>Usine</font>
+                      </font>
+                    </a>
+                  </li>
+                  <li>
+                    <a data-filter=".Roof Replacement" href="#">
+                      <font style={{ verticalAlign: "inherit" }}>
+                        <font style={{ verticalAlign: "inherit" }}>
+                          Remplacement du toit
+                        </font>
+                      </font>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div
+                className="projects-grids gallery-container clearfix"
+                style={{ position: "relative", height: "969.813px" }}
+              >
+                {travaux.map((projet) => (
+                  <LastProjetItem key={uuidv4()} projet={projet} />
                 ))}
               </div>
             </div>
@@ -217,6 +300,8 @@ function About() {
           </div>
         </div>
       </section>
+      {/*Section reservation */}
+      <Reservation />
       {/*Section Témoignage */}
       <section className="wpo-testimonials-section section-padding">
         <div className="container">
@@ -251,17 +336,25 @@ function About() {
                     role="presentation"
                     className="owl-prev"
                   >
-                    <span aria-label="Précédent">‹</span>
+                    <span aria-label="Précédent">
+                      <font style={{ verticalAlign: "inherit" }}>
+                        <font style={{ verticalAlign: "inherit" }}>‹</font>
+                      </font>
+                    </span>
                   </button>
                   <button
                     type="button"
                     role="presentation"
                     className="owl-next"
                   >
-                    <span aria-label="Suivant">›</span>
+                    <span aria-label="Suivant">
+                      <font style={{ verticalAlign: "inherit" }}>
+                        <font style={{ verticalAlign: "inherit" }}>›</font>
+                      </font>
+                    </span>
                   </button>
                 </div>
-                <div className="owl-dots disabled"></div>
+                <div class="owl-dots disabled"></div>
               </div>
             </div>
           </div>
@@ -294,4 +387,4 @@ function About() {
   );
 }
 
-export default About;
+export default Home;

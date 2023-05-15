@@ -1,6 +1,7 @@
 import React from 'react'
-import ImageBanner from '../../assets/images/hero/01.jpg'
-function SectionOne() {
+import BackgroundImage from '../../assets/images/hero/01.jpg'
+
+function BannerHome() {
   return (
     <section className="wpo-hero-section-2">
       <div className="container">
@@ -11,21 +12,22 @@ function SectionOne() {
                 <span>:: Personnel hautement qualifié </span>
               </div>
               <div className="wpo-hero-title">
-                <h2>
-                  Prêt à vous  <span>aider</span>.
+                <h2 style={{fontSize: '95px'}}>
+                  Prêt a vous <span>aider</span>.
                 </h2>
               </div>
               <div className="wpo-hero-des">
                 <p>
-                  We are certified company. We provide best Construction
-                  services for you &amp; your company .
+                  Nous sommes une entreprise certifiée. Nous fournissons les
+                  meilleurs services de construction pour vous &amp; votre
+                  entreprise.
                 </p>
               </div>
               <div className="btns">
                 <ul>
                   <li>
                     <a href="appointment.html" className="btn theme-btn">
-                      RESERVATION EN LIGNE
+                      Reservation en Ligne
                     </a>
                   </li>
                   <li>
@@ -49,7 +51,7 @@ function SectionOne() {
         <div
           className="right-img"
           style={{
-            background: `url(${ImageBanner}) no-repeat right center`,
+            background: `url(${BackgroundImage}) no-repeat right center`,
           }}
         ></div>
       </div>
@@ -57,4 +59,4 @@ function SectionOne() {
   );
 }
 
-export default SectionOne
+export default BannerHome

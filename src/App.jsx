@@ -1,5 +1,7 @@
-import RoutesApp from "./RoutesApp";
+import { BrowserRouter } from "react-router-dom";
+import RouteApp from "./RouteApp";
 
+// import CSS
 import "./assets/css/font-awesome.min.css";
 import "./assets/css/themify-icons.css";
 import "./assets/css/flaticon.css";
@@ -15,17 +17,17 @@ import "./assets/css/jquery.fancybox.css";
 import "./assets/css/odometer-theme-default.css";
 import "./assets/css/style.css";
 
-import Footer from "./components/Footer"
-import HomePage from "./pages/HomePage";
+//import Pages
+import Home from "./Pages/Home";
 
-function App() {
+const App = () => {
   return (
     <div className="page-wrapper">
-      <HomePage/>
-      {/*<RoutesApp />*/}
-      <Footer/>
+      <BrowserRouter>
+        <RouteApp />
+      </BrowserRouter>
     </div>
   );
-}
+};
 
 export default App;

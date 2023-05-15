@@ -1,57 +1,6 @@
-import { useState, useEffect } from "react";
-import { v4 as uuidv4 } from "uuid";
+import React from "react";
 
 function Footer() {
-  const [servicesData, setServicesData] = useState([
-    {
-      label: "Building Construction",
-      baseUrl: "/services/construction",
-      type: "internal",
-    },
-    {
-      label: "House Construction",
-      baseUrl: "/services/construction",
-      type: "internal",
-    },
-    {
-      label: "Interior Desing",
-      baseUrl: "/services/construction",
-      type: "internal",
-    },
-    {
-      label: "Road Construction",
-      baseUrl: "/services/construction",
-      type: "internal",
-    },
-    {
-      label: "OutFiled Digging",
-      baseUrl: "/services/construction",
-      type: "internal",
-    },
-  ]);
-  
-  const [socialLink, setSocialLink] = useState([
-    {
-      icone: "ti-facebook",
-      baseUrl: "https://facebook.com",
-    },
-    {
-      icone: "ti-twitter-alt",
-      baseUrl: "https://facebook.com",
-    },
-    {
-      icone: "ti-instagram",
-      baseUrl: "https://facebook.com",
-    },
-    {
-      icone: "ti-google",
-      baseUrl: "https://facebook.com",
-    },
-  ]);
-
-  useEffect( ()=>{
-
-  }, [socialLink, servicesData])
   return (
     <footer className="wpo-site-footer">
       <div className="wpo-upper-footer">
@@ -60,41 +9,55 @@ function Footer() {
             <div className="col col-lg-4 col-md-6 col-sm-12 col-12">
               <div className="widget about-widget">
                 <div className="widget-title">
-                  <h3>A propos de nous</h3>
+                  <h3>À propos de nous</h3>
                 </div>
                 <p>
-                  With more than 30 years of experience, the Construction
-                  services company has become the largest Construction company
-                  in the country.
+                  Avec plus de 30 ans d'expérience, la société de services de
+                  construction est devenue la plus grande entreprise de
+                  construction du pays.
                 </p>
                 <ul>
-                  {socialLink.map((social) => (
-                    <li key={uuidv4()}>
-                      <a href={social.baseUrl}>
-                        <i className={social.icone}></i>
-                      </a>
-                    </li>
-                  ))}
+                  <li>
+                    <a href="#">
+                      <i className="ti-facebook"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i className="ti-twitter-alt"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i className="ti-instagram"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i className="ti-google"></i>
+                    </a>
+                  </li>
                 </ul>
               </div>
             </div>
             <div className="col col-lg-4 col-md-6 col-sm-12 col-12">
               <div className="widget wpo-service-link-widget">
                 <div className="widget-title">
-                  <h3>Contact </h3>
+                  <h3>Contact</h3>
                 </div>
                 <div className="contact-ft">
                   <ul>
                     <li>
-                      <i className="fi flaticon-location"></i>7 Green Lake
-                      Street Crawfordsville, IN 47933
+                      <i className="fi flaticon-location"></i>7 rue du lac vert
+                      Crawfordsville, IN 47933
                     </li>
                     <li>
-                      <i className="fi flaticon-phone-call"></i>+1 800 123 456
-                      789
+                      <i className="fi flaticon-phone-call"></i>
+                      +1 800 123 456 789
                     </li>
                     <li>
-                      <i className="fi flaticon-send"></i>info@example.com
+                      <i className="fi flaticon-send"></i>
+                      info@exemple.com
                     </li>
                   </ul>
                 </div>
@@ -103,19 +66,24 @@ function Footer() {
             <div className="col col-lg-4 col-md-6 col-sm-12 col-12">
               <div className="widget link-widget">
                 <div className="widget-title">
-                  <h3>Services </h3>
+                  <h3>Prestations de service</h3>
                 </div>
                 <ul>
-                  {servicesData.map(link => (
-                    <li key={uuidv4()}>
-                      <a
-                        href={link.baseUrl}
-                        target={link.type == "internal" ? "" : "_blank"}
-                      >
-                        {link.label}
-                      </a>
-                    </li>
-                  ))}
+                  <li>
+                    <a href="service-single.html">Construction de bâtiments</a>
+                  </li>
+                  <li>
+                    <a href="service-single.html">Construction de maison</a>
+                  </li>
+                  <li>
+                    <a href="service-single.html">Conception intérieure</a>
+                  </li>
+                  <li>
+                    <a href="service-single.html">Construction de route</a>
+                  </li>
+                  <li>
+                    <a href="service-single.html">Creuser hors fichier</a>
+                  </li>
                 </ul>
               </div>
             </div>
@@ -127,12 +95,7 @@ function Footer() {
           <div className="row">
             <div className="col col-xs-12">
               <p className="copyright">
-                {" "}
-                Copyright © 2023 All Rights Reserved. Design and realised by
-                <a href="https://hives-solutions.com" target="_blank">
-                  {" "}
-                  Hives Solutions
-                </a>
+                Copyright © 2023 Tous droits réservés.
               </p>
             </div>
           </div>

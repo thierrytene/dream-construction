@@ -1,9 +1,10 @@
 import React from "react";
-import Logo from "../assets/images/logo.png";
+import Logo from "../../assets/images/logo.png";
+import { NavLink } from "react-router-dom";
 
-function NavBarPhone() {
+function NavigationBar() {
   return (
-    <nav className="navigation navbar navbar-expand-lg navbar-light sticky-header">
+    <nav className="navigation navbar navbar-expand-lg navbar-light original">
       <div className="container">
         <div className="row align-items-center">
           <div className="col-lg-3 col-md-3 col-3 d-lg-none dl-block">
@@ -18,37 +19,57 @@ function NavBarPhone() {
           </div>
           <div className="col-lg-3 col-md-6 col-6">
             <div className="navbar-header">
-              <a className="navbar-brand" href="/">
-                <img src={Logo} alt="" />
-              </a>
+              {/*logo*/}
+              <NavLink to={"/"}>
+                <a className="navbar-brand">
+                  <img
+                    src={Logo}
+                    alt=""
+                    style={{ width: "100px", height: "100px" }}
+                  />
+                </a>
+              </NavLink>
             </div>
           </div>
           <div className="col-lg-6 col-md-1 col-1">
-            <div id="navbar" className="collapse navbar-collapse navigation-holder">
+            <div
+              id="navbar"
+              className="collapse navbar-collapse navigation-holder"
+            >
               <button className="menu-close">
                 <i className="ti-close"></i>
               </button>
+              {/*list menu*/}
               <ul className="nav navbar-nav mb-2 mb-lg-0">
                 <li className="menu-item-has-children">
-                  <a className="active" href="#">
-                    Accueil
-                  </a>
+                  <NavLink to={"/"}>
+                    <a>Accueil</a>
+                  </NavLink>
                 </li>
                 <li>
-                  <a href="/about">A propos</a>
-                </li>
-                <li className="menu-item-has-children">
-                  <a href="/services">Services</a>
-                </li>
-                <li className="menu-item-has-children">
-                  <a href="/blog">Blog</a>
+                  <NavLink to={"/a-propos"}>
+                    <a>A propos</a>
+                  </NavLink>
                 </li>
                 <li>
-                  <a href="/contact">Contact</a>
+                  <NavLink to={"/services"}>
+                    <a>Services</a>
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to={"/blog"}>
+                    <a>Blog</a>
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to={"/contact"}>
+                    <a>Contact</a>
+                  </NavLink>
                 </li>
               </ul>
             </div>
           </div>
+          {/*Formulaire de recherche */}
           <div className="col col-lg-3 col-md-2 col-2">
             <div className="header-right">
               <div className="header-search-form-wrapper">
@@ -62,7 +83,7 @@ function NavBarPhone() {
                         <input
                           type="text"
                           className="form-control"
-                          placeholder="Recherche..."
+                          placeholder="Search here..."
                         />
                         <button type="submit">
                           <i className="fi flaticon-magnifiying-glass"></i>
@@ -72,10 +93,11 @@ function NavBarPhone() {
                   </div>
                 </div>
               </div>
+              {/*btn devis */}
               <div className="close-form">
-                <a className="theme-btn" href="contact.html">
-                  OBTENIR UN DEVIS
-                </a>
+                <NavLink to={"/contact"}>
+                  <a className="theme-btn">OBTENIR UN DEVIS GRATUIT</a>
+                </NavLink>
               </div>
             </div>
           </div>
@@ -85,4 +107,4 @@ function NavBarPhone() {
   );
 }
 
-export default NavBarPhone;
+export default NavigationBar;
