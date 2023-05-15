@@ -52,9 +52,9 @@ function NavigationBar() {
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to={"/services"}>
+                  {/*<NavLink to={"/services"}>
                     <a>Services</a>
-                  </NavLink>
+  </NavLink>*/}
                 </li>
                 <li>
                   <NavLink to={"/blog"}>
